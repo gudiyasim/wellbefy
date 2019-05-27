@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row">
+    <form>
+      <select name="month" class="custom-select">
+        <option name="januari" selected>Januari</option>
+        <option value="Februari">Februari</option>
+        <option value="Mars">Mars</option>
+        <option value="April">April</option>
+        <option value="Maj">Maj</option>
+        <option value="Juni">Juni</option>
+        <option value="Juli">Juli</option>
+        <option value="Augusti">Augusti</option>
+        <option value="September">September</option>
+        <option value="Oktober">Oktober</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+    </form>
+    <div class="col-sm-12">
+      <input
+        type="number"
+        name="wage"
+        id="Wage"
+        placeholder="Wage"
+        class="form-control"
+        #first
+      />
+      <input
+        type="number"
+        id="Sickdays"
+        placeholder="Number of 1 day sick leaves"
+        class="form-control"
+        #sixth
+      />
+      <input
+        type="number"
+        id="Sickdays2"
+        placeholder="Number of 2-14 day sick leaves"
+        class="form-control"
+        #seventh
+      />
+    </div>
+
+    <div class="col-sm-6">
+      <input
+        type="number"
+        id="Percent1"
+        value="31"
+        class="form-control"
+        #second
+      />
+      <input
+        type="number"
+        id="Percent2"
+        value="12"
+        class="form-control"
+        #third
+      />
+    </div>
+
+    <div class="col-sm-6">
+      <input
+        type="number"
+        id="Percent3"
+        value="20"
+        class="form-control"
+        #fourth
+      />
+      <input
+        type="number"
+        id="Percent4"
+        value="10"
+        class="form-control"
+        #fifth
+      />
+    </div>
+  </div>
+  <button
+    type="submit"
+    (click)="
+      calculate(
+        first.value,
+        second.value,
+        third.value,
+        fourth.value,
+        fifth.value,
+        sixth.value,
+        seventh.value
+      )
+    "
+  >Calculate
+  </button>
+  <h4>{{ sum5 }}</h4>
+</div>
+<button type="submit" (click)="chartstuff()">See chart</button>
+<div style="width: 50%">
+  <canvas id="canvas"></canvas>
+</div>
